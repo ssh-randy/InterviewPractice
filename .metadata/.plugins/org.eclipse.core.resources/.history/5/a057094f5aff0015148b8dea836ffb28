@@ -1,0 +1,40 @@
+package listStuff;
+
+public class LinkedListRecursive<T> implements List<T> {
+
+	private ListCell<T> head;
+	
+	public LinkedListRecursive(){
+		head = null;
+	}
+	
+	public void insert(T element) {
+		head = new ListCell<T>(element, head);
+	}
+
+	public void delete(T element) {
+		delete(element, head);
+		
+	}
+	
+	//helper function recursive delete
+	private void delete(T element, ListCell<T> lc) {
+		if (lc.getDatum().equals(element)) {
+			
+		}
+	}
+
+	public boolean contains(T element) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	
+}

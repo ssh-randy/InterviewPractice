@@ -1,0 +1,21 @@
+package listStuff;
+
+public class ListMain {
+
+	public static void main(String[] args) {
+		
+		LinkedListRecursive<Integer> list = new LinkedListRecursive<Integer>();
+		
+		list.insert(1);
+		list.insert(2);
+		list.insert(3);
+		list.insert(5);
+		
+		list.contains(4);
+		list.contains(4);
+		
+		
+		
+	}
+	
+}

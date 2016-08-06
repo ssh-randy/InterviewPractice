@@ -1,0 +1,15 @@
+package listStuff;
+
+public class ListMain {
+
+	public static void main(String[] args) {
+		
+		LinkedListRecursive<Integer> list = new LinkedListRecursive<Integer>();
+		
+		
+		
+		
+		
+	}
+	
+}

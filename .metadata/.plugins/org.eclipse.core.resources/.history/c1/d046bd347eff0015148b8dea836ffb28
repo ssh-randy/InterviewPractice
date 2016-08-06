@@ -1,0 +1,68 @@
+package listStuff;
+
+public class LinkedListRecursive<T> implements List<T> {
+
+	private ListCell<T> head;
+	
+	public LinkedListRecursive(){
+		head = null;
+	}
+	
+	public void insert(T element) {
+		head = new ListCell<T>(element, head);
+	}
+
+	public void delete(T element) {
+		delete(element, head);
+		
+	}
+	
+	//helper function recursive delete
+	private ListCell<T> delete(T element, ListCell<T> lc) {
+		if(lc == null) return null;
+		if(lc.getDatum().equals(element)) return lc.getNext();
+		lc.setNext(delete(element, lc));
+		
+		return lc;
+	}
+
+	public boolean contains(T element) {
+		return recursiveContains(element, head);
+	}
+	
+	private boolean recursiveContains(T element, ListCell<T> lc) {
+		if(lc == null) return false;
+		else if(lc.getDatum().equals(element)) return true;
+		else return recursiveContains(element, lc.getNext());
+	}
+
+	public int size() {
+		return size(head);
+	}
+
+	private int size(ListCell<T> lc){
+		if (lc == null) return 0;
+		else return 1 + size(lc.getNext());
+	}
+
+	
+	public ListCell<T> reverse() {
+		return reverse(head, null);
+	}
+	
+	private ListCell<T> reverse(ListCell<T> lc, ListCell<T> backwards){
+		if(lc == null) return backwards;
+		return reverse(lc.getNext(), new ListCell<T>(lc.getDatum(),backwards));
+		
+	}
+	
+	public String toString() {
+		return toString(head);
+	}
+	
+	private String toString(ListCell<T> lc){
+		return lc.getDatum().toString() + " " + toString(lc.getNext());
+	}
+
+	
+}
