@@ -16,7 +16,7 @@ public class GitSearchQuestion {
 
     public static void main(String[] args) throws IOException {
 
-        GitHub github = new GitHubBuilder().withAppInstallationToken("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").build();
+        GitHub github = new GitHubBuilder().withAppInstallationToken("XXXXXXXXXXX").build();
 
         Iterable<GHRepository> repoResults = github.searchRepositories().language("js").list();
 
